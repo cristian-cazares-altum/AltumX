@@ -1,7 +1,10 @@
-﻿/*
+/*
 ========================================================
                         Script By:
                     Cristian Cázares
+
+Change the color of a simple object using the
+GVRReticlePointer from the Google Cardboard SDK (GVR).
 =========================================================
 */
 using System.Collections;
