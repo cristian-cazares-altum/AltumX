@@ -2,7 +2,6 @@
 ========================================================
                         Script By:
                     Cristian Cázares
-
 Change the color of a simple object using the
 GVRReticlePointer from the Google Cardboard SDK (GVR).
 =========================================================
@@ -11,12 +10,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorChangeV2 : MonoBehaviour
+public class ColorChange : MonoBehaviour
 {
+
     //Se declaran los tres colores que se van a usar
+    [Header("Colores a cambiar:")]
+    [Header("Código por Cristian Cázares")]
     public Color enterColor;
-    Color exitColor;
     public Color clickColor;
+    Color exitColor;
 
     void Start()
     {
