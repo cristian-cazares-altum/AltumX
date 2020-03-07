@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
     [Tooltip("Explicación: Con GvrEditorEmulator no podemos usar el movimiento de mouse y las teclas de movimiento (wasd) al mismo tiempo." +
         "\nAl activar la cámara alternativa podemos hacerlo sin problemas. \nSE ACTIVA PRESIONANDO LA TECLA \"ESC\"")]
     public bool altCam;
+    [Tooltip("Variable para ajustar la sensibilidad del mouse.")]
+    public float MouseSense = 150f;
 
     //Herramienta Extra para ver posicion del Joystick
     [Header("Herramientas Extras")]
@@ -103,12 +105,13 @@ public class Movement : MonoBehaviour
         }
     }
 
+
     void AltCamMove()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-        float mouseX = Input.GetAxis("Mouse X") * 100 * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * 100 * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * MouseSense * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * MouseSense * Time.deltaTime;
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90f, 90f);
